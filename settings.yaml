@@ -1,0 +1,8 @@
+client_config_backend: 'file'
+client_config_file: 'client_secrets.json'
+oauth_scope: ['https://www.googleapis.com/auth/drive']
+
+# Don't ask for credentials every time
+save_credentials: True
+save_credentials_backend: 'file'
+save_credentials_file: 'saved_credentials.json'

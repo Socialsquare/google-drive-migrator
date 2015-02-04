@@ -1,0 +1,6 @@
+# Don't add credentials
+/client_secrets.json
+/saved_credentials.json
+
+# Python project
+.ropeproject
