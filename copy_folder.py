@@ -31,7 +31,7 @@ def recursiveCopyInto(gauth, fID_from, fID_to, maxdepth=float('infinity'), __cur
                   'mimeType': 'application/vnd.google-apps.folder',
                 }
 
-                exists_check = gauth.service.files().list(q='title = "%s" and "%s" in parents and trashed = false' % (child['title'], fID_to)).execute()
+                exists_check = gauth.service.files().list(q='title = "%s" and "%s" in parents and trashed = false' % (child['title'].replace('"', '\\"'), fID_to)).execute()
                 pp(exists_check)
 
                 if exists_check['items'] == []:
@@ -49,7 +49,7 @@ def recursiveCopyInto(gauth, fID_from, fID_to, maxdepth=float('infinity'), __cur
                                            # "Copy of ..."
                 }
 
-                exists_check = gauth.service.files().list(q='title = "%s" and "%s" in parents and trashed = false' % (child['title'], fID_to)).execute()
+                exists_check = gauth.service.files().list(q='title = "%s" and "%s" in parents and trashed = false' % (child['title'].replace('"', '\\"'), fID_to)).execute()
 
                 if exists_check['items'] == []:
                     print '  ' * (__currentDepth+1) + 'Trying to copy "%s"' % child['title']
