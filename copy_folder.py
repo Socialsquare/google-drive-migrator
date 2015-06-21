@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 from pprint import pprint as pp
